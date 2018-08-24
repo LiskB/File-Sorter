@@ -13,7 +13,7 @@ def openDirectory():
   global dirPath
   dirPath = askdirectory(parent=root, initialdir="/", mustexist=True, title = "Choose a directory to organize")
   pathLabel.config(text=dirPath) # display the directory path
-  displayLabel.config(text="") # clear the status box
+  #displayLabel.config(text="") # clear the status box
   
 ## This method brings all files to the parent directory, deletes the empty folders
 ## Also has the option to group files into new folders, based on user selection
@@ -107,6 +107,7 @@ pathLabel.grid(row=1, columnspan=2)
 organizeLabel.grid(row=2)
 typeCheck.grid(row=2, column=1)
 organizeButton.grid(row=3, columnspan=2)
+displayLabel.grid(row=4, columnspan=2)
 
 
 root.mainloop() #show window and begin main loop
