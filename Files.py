@@ -26,6 +26,13 @@ def organizeFiles():
     for filepath in fileList:
       shutil.move(filepath, os.path.join(dirPath, os.path.basename(filepath)))
     print("move complete")
+    # Delete the empty folders
+    childrenPaths = os.listdir(dirPath)
+    for childPath in childrenPaths:
+      print ("Check path: " + childPath)
+      if os.path.isdir(os.path.join(dirPath, childPath)):
+        print ("is path")
+        shutil.rmtree(os.path.join(dirPath, childPath))
   else:
     print ("path does not exist")
 
