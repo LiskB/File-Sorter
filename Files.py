@@ -2,6 +2,7 @@ from tkinter import * #import resources for GUI
 from tkinter import ttk
 from tkinter.filedialog import askdirectory
 import os
+import shutil
 
 
 ## DEFINE FUNCTIONS AND VARIABLES
@@ -21,8 +22,10 @@ def organizeFiles():
         if filename[0] != ".": #exclude hidden system files
           fileList.append(os.path.join(root, filename))
     
-    for x in fileList:
-      print (x)
+    # Add all files to parent directory
+    for filepath in fileList:
+      shutil.move(filepath, os.path.join(dirPath, os.path.basename(filepath)))
+    print("move complete")
   else:
     print ("path does not exist")
 
