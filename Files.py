@@ -1,5 +1,4 @@
 from tkinter import * #import resources for GUI
-from tkinter import ttk
 from tkinter.filedialog import askdirectory
 import os
 import shutil
@@ -60,39 +59,50 @@ def client_exit():
 
 ## INITIALIZE SETTINGS
 root = Tk() #create window root
-root.geometry("800x600") #set size of window
+root.geometry("550x220") #set size of window
 Title = root.title("File Opener") #set title of window
 
 
 
-## CREATE MENU BAR
-menu = Menu(root)
-root.config(menu=menu)
-
-file = Menu(menu)
-file.add_command(label = 'Open')
-file.add_command(label = 'Exit', command = client_exit)
-
-menu.add_cascade(label = 'File', menu = file)
-
+## CREATE CONTENT FRAME AND MENU BAR
+content = Frame(root)
+'''
+menubar = Menu(root)
+menubar.add_command(label = "Open", command= client_exit)
+menubar.add_command(label = "Exit", command = client_exit)
+root.config(menu=menubar)
+'''
 
 
 ## CREATE MAIN CONTENT
-browseButton = Button(root, text="Browse", command=openDirectory)
+browseButton = Button(content, text="Browse", font=("", 20), height=2, width=10, command=openDirectory)
 browseButton.pack()
 
-pathLabel = Label(root)
+pathLabel = Label(content)
 pathLabel.pack()
 
-organizeLabel = Label(root, text="Organization method: ")
+organizeLabel = Label(content, text="Organization method: ")
 organizeLabel.pack()
 
 typeVar = IntVar()
-typeCheck = Checkbutton(root, text="Sort by file type", variable=typeVar)
+typeCheck = Checkbutton(content, text="Sort by file type", variable=typeVar)
 typeCheck.pack()
 
-organizeButton = Button(root, text="Organize", command= organizeFiles)
+organizeButton = Button(content, text="Organize", font=("", 20), height=2, width=10, command= organizeFiles)
 organizeButton.pack()
+
+## LAYOUT
+root.rowconfigure(0, weight=1)
+root.columnconfigure(0, weight=1)
+root.rowconfigure(2, weight=1)
+root.columnconfigure(2, weight=1)
+content.grid(row=1, column=1)
+
+browseButton.grid(row=0, columnspan=2)
+pathLabel.grid(row=1, columnspan=2)
+organizeLabel.grid(row=2)
+typeCheck.grid(row=2, column=1)
+organizeButton.grid(row=3, columnspan=2)
 
 
 
