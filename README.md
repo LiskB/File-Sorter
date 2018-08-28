@@ -1,6 +1,6 @@
-# Project Title
+# File Directory Sorter
 
-One Paragraph of project description goes here
+This GUI program allows the user to select a directory on their computer and organize the files within this directory. The program will search through all subdirectories, move all the files to the parent directory the user selected, and delete the empty folders. It also gives the user the choice to organize the files into new folders by their extension. This provides a convenient way to organize a messy desktop, or any other folder.
 
 ## Getting Started
 
@@ -8,67 +8,38 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+[Python](https://www.python.org/downloads/) (preferably 3.7.0, but any recent version will be compatible)
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Clone or download this repository
 
 ```
-Give the example
+git clone https://github.com/LiskB/File-Sorter.git
 ```
 
-And repeat
+Navigate to repository location using the terminal / command prompt
 
 ```
-until finished
+cd (Path to folder)
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Run the python program
 
 ```
-Give an example
+python3 Files.py
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+Follow the instructions for navigation within the program.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Python 3.7.0](https://www.python.org/) - The language used
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+**Branden Lisk**
 
 ## Screenshots
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+
+Will be added in future.
